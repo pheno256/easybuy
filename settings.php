@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['vendor_id'])) {
+if(!isset($_SESSION['admin_id'])) {
     header('Location: login.php');
     exit;
 }
@@ -8,53 +8,42 @@ if(!isset($_SESSION['vendor_id'])) {
 require_once '../app/config/config.php';
 require_once '../app/lib/Database.php';
 
-$page_title = 'Store Settings';
+$page_title = 'Site Settings';
 $db = Database::getInstance();
-$vendor_id = $_SESSION['vendor_id'];
 $message = '';
 
-$vendor = $db->query("SELECT * FROM vendors WHERE id = ?", [$vendor_id])->fetch();
-
+// Update settings
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $business_name = $_POST['business_name'];
-    $phone = $_POST['phone'];
-    $address = $_POST['address'];
-    $description = $_POST['description'];
+    $site_name = $_POST['site_name'];
+    $site_email = $_POST['site_email'];
+    $site_phone = $_POST['site_phone'];
+    $site_address = $_POST['site_address'];
+    $delivery_fee_threshold = $_POST['delivery_fee_threshold'];
+    $delivery_fee = $_POST['delivery_fee'];
     
-    $db->query("
-        UPDATE vendors 
-        SET business_name = ?, phone = ?, address = ?, description = ? 
-        WHERE id = ?
-    ", [$business_name, $phone, $address, $description, $vendor_id]);
+    // Update settings in database or config file
+    $db->query("UPDATE settings SET value = ? WHERE key = 'site_name'", [$site_name]);
+    $db->query("UPDATE settings SET value = ? WHERE key = 'site_email'", [$site_email]);
+    $db->query("UPDATE settings SET value = ? WHERE key = 'site_phone'", [$site_phone]);
+    $db->query("UPDATE settings SET value = ? WHERE key = 'site_address'", [$site_address]);
+    $db->query("UPDATE settings SET value = ? WHERE key = 'delivery_fee_threshold'", [$delivery_fee_threshold]);
+    $db->query("UPDATE settings SET value = ? WHERE key = 'delivery_fee'", [$delivery_fee]);
     
     $message = "Settings updated successfully!";
-    $vendor = $db->query("SELECT * FROM vendors WHERE id = ?", [$vendor_id])->fetch();
 }
 
-// Change password
-if(isset($_POST['change_password'])) {
-    $current = $_POST['current_password'];
-    $new = $_POST['new_password'];
-    $confirm = $_POST['confirm_password'];
-    
-    if(password_verify($current, $vendor['password'])) {
-        if($new === $confirm && strlen($new) >= 6) {
-            $hashed = password_hash($new, PASSWORD_DEFAULT);
-            $db->query("UPDATE vendors SET password = ? WHERE id = ?", [$hashed, $vendor_id]);
-            $password_message = "Password changed successfully!";
-        } else {
-            $password_error = "Passwords do not match or are too short";
-        }
-    } else {
-        $password_error = "Current password is incorrect";
-    }
+// Get current settings
+$settings = [];
+$result = $db->query("SELECT * FROM settings")->fetchAll();
+foreach($result as $row) {
+    $settings[$row['key']] = $row['value'];
 }
 
-require_once 'includes/vendor-header.php';
+require_once 'includes/admin-header.php';
 ?>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="h3">Store Settings</h1>
+    <h1 class="h3">Site Settings</h1>
 </div>
 
 <?php if($message): ?>
@@ -65,107 +54,104 @@ require_once 'includes/vendor-header.php';
 <?php endif; ?>
 
 <div class="row">
-    <div class="col-md-6 mb-4">
-        <div class="card shadow-sm">
+    <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
             <div class="card-header bg-white">
-                <h5 class="mb-0">Store Information</h5>
+                <h5 class="mb-0">General Settings</h5>
             </div>
             <div class="card-body">
                 <form method="POST" action="">
                     <div class="mb-3">
-                        <label class="form-label">Business Name</label>
-                        <input type="text" class="form-control" name="business_name" 
-                               value="<?php echo htmlspecialchars($vendor['business_name']); ?>" required>
+                        <label class="form-label">Site Name</label>
+                        <input type="text" class="form-control" name="site_name" 
+                               value="<?php echo $settings['site_name'] ?? 'EasyBuy Uganda'; ?>">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" value="<?php echo htmlspecialchars($vendor['email']); ?>" disabled>
-                        <small class="text-muted">Email cannot be changed</small>
+                        <label class="form-label">Site Email</label>
+                        <input type="email" class="form-control" name="site_email" 
+                               value="<?php echo $settings['site_email'] ?? 'info@easybuy.ug'; ?>">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" name="phone" 
-                               value="<?php echo htmlspecialchars($vendor['phone']); ?>" required>
+                        <label class="form-label">Site Phone</label>
+                        <input type="tel" class="form-control" name="site_phone" 
+                               value="<?php echo $settings['site_phone'] ?? '+256700000000'; ?>">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Business Address</label>
-                        <textarea class="form-control" name="address" rows="2"><?php echo htmlspecialchars($vendor['address']); ?></textarea>
+                        <label class="form-label">Site Address</label>
+                        <textarea class="form-control" name="site_address" rows="2"><?php echo $settings['site_address'] ?? 'Kampala, Uganda'; ?></textarea>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Store Description</label>
-                        <textarea class="form-control" name="description" rows="3"><?php echo htmlspecialchars($vendor['description'] ?? ''); ?></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
-                </form>
             </div>
         </div>
     </div>
     
-    <div class="col-md-6 mb-4">
-        <div class="card shadow-sm">
+    <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
             <div class="card-header bg-white">
-                <h5 class="mb-0">Security Settings</h5>
+                <h5 class="mb-0">Delivery Settings</h5>
             </div>
             <div class="card-body">
-                <?php if(isset($password_message)): ?>
-                <div class="alert alert-success"><?php echo $password_message; ?></div>
-                <?php endif; ?>
-                <?php if(isset($password_error)): ?>
-                <div class="alert alert-danger"><?php echo $password_error; ?></div>
-                <?php endif; ?>
-                
-                <form method="POST" action="">
                     <div class="mb-3">
-                        <label class="form-label">Current Password</label>
-                        <input type="password" class="form-control" name="current_password" required>
+                        <label class="form-label">Free Delivery Threshold (UGX)</label>
+                        <input type="number" class="form-control" name="delivery_fee_threshold" 
+                               value="<?php echo $settings['delivery_fee_threshold'] ?? '200000'; ?>">
+                        <small class="text-muted">Orders above this amount get free delivery</small>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">New Password</label>
-                        <input type="password" class="form-control" name="new_password" required>
-                        <small class="text-muted">Minimum 6 characters</small>
+                        <label class="form-label">Standard Delivery Fee (UGX)</label>
+                        <input type="number" class="form-control" name="delivery_fee" 
+                               value="<?php echo $settings['delivery_fee'] ?? '15000'; ?>">
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Confirm New Password</label>
-                        <input type="password" class="form-control" name="confirm_password" required>
-                    </div>
-                    <button type="submit" name="change_password" class="btn btn-warning">Change Password</button>
-                </form>
             </div>
         </div>
         
-        <div class="card shadow-sm mt-4">
+        <div class="card shadow-sm">
             <div class="card-header bg-white">
-                <h5 class="mb-0">Payout Information</h5>
+                <h5 class="mb-0">Payment API Settings</h5>
             </div>
             <div class="card-body">
-                <div class="alert alert-info">
-                    <i class="fas fa-info-circle"></i> Your payouts are sent to your registered mobile money number.
+                <div class="mb-3">
+                    <label class="form-label">MTN API Environment</label>
+                    <select class="form-select">
+                        <option>Sandbox (Testing)</option>
+                        <option>Production (Live)</option>
+                    </select>
                 </div>
-                <p><strong>Mobile Money Number:</strong> <?php echo htmlspecialchars($vendor['phone']); ?></p>
-                <p><strong>Commission Rate:</strong> <?php echo $vendor['commission_rate'] ?? '10'; ?>%</p>
-                <p><strong>Available Balance:</strong> <strong class="text-success">UGX <?php echo number_format($vendor['balance'] ?? 0); ?></strong></p>
-                <button class="btn btn-success w-100" onclick="requestPayout()">
-                    <i class="fas fa-money-bill-wave"></i> Request Payout
-                </button>
+                <div class="mb-3">
+                    <label class="form-label">Airtel API Environment</label>
+                    <select class="form-select">
+                        <option>Sandbox (Testing)</option>
+                        <option>Production (Live)</option>
+                    </select>
+                </div>
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> API credentials are stored in the .env file
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white">
+                <h5 class="mb-0">Maintenance</h5>
+            </div>
+            <div class="card-body">
+                <button type="submit" class="btn btn-primary">Save All Settings</button>
+                <button type="button" class="btn btn-danger" onclick="confirmClearCache()">Clear Cache</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-function requestPayout() {
-    Swal.fire({
-        title: 'Request Payout',
-        text: 'Are you sure you want to request a payout?',
-        icon: 'question',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, request'
-    }).then((result) => {
-        if(result.isConfirmed) {
-            showNotification('Payout request submitted! We\'ll process within 3-5 business days.', 'success');
-        }
-    });
+function confirmClearCache() {
+    if(confirm('Clear all cached data? This may temporarily slow down the site.')) {
+        showNotification('Cache cleared successfully!', 'success');
+    }
 }
 </script>
 
-<?php require_once 'includes/vendor-footer.php'; ?>
+<?php require_once 'includes/admin-footer.php'; ?>
