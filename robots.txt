@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /includes/
+Disallow: /login.php
+Disallow: /register.php
+Disallow: /logout.php
+Disallow: /cart.php
+Disallow: /checkout.php
+Disallow: /account.php
+Disallow: /wishlist.php
+
+Sitemap: http://localhost/easybuy-php/sitemap.php

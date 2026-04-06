@@ -1,0 +1,365 @@
+/* ============================================
+   EasyBuy Uganda - Responsive Styles
+   Version: 2.0.0
+   ============================================ */
+
+/* Extra Large Devices (Desktops) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Large Devices (Laptops) */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section {
+        min-height: 70vh;
+    }
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .hero-section {
+        min-height: 60vh;
+    }
+    
+    .navbar .w-50 {
+        width: 100% !important;
+        margin: 1rem 0;
+    }
+    
+    .sidebar {
+        margin-bottom: 2rem;
+    }
+    
+    .product-card img {
+        height: 200px;
+    }
+    
+    .cart-table {
+        font-size: 0.875rem;
+    }
+    
+    .checkout-steps {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .tracking-timeline {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .tracking-timeline::before {
+        display: none;
+    }
+    
+    .timeline-step {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-align: left;
+    }
+    
+    .timeline-step .step-circle {
+        margin: 0;
+    }
+    
+    .payment-methods {
+        flex-direction: column;
+    }
+}
+
+/* Small Devices (Phones) */
+@media (max-width: 767px) {
+    .container {
+        max-width: 540px;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .display-1 {
+        font-size: 2rem;
+    }
+    
+    .display-2 {
+        font-size: 1.75rem;
+    }
+    
+    .display-3 {
+        font-size: 1.5rem;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .hero-section {
+        padding: 3rem 0;
+        min-height: auto;
+    }
+    
+    .product-card img {
+        height: 180px;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cart-item-image {
+        margin: 0 auto;
+    }
+    
+    .quantity-selector {
+        justify-content: center;
+    }
+    
+    .cart-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .cart-actions .btn {
+        width: 100%;
+    }
+    
+    .order-summary {
+        margin-top: 2rem;
+    }
+    
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+    
+    .footer .col-md-4,
+    .footer .col-md-3,
+    .footer .col-md-2 {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 575px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .row {
+        margin-right: -0.5rem;
+        margin-left: -0.5rem;
+    }
+    
+    .col,
+    [class*="col-"] {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    
+    .product-card img {
+        height: 160px;
+    }
+    
+    .table-responsive {
+        font-size: 0.75rem;
+    }
+    
+    .btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .modal-footer .btn {
+        width: 100%;
+    }
+    
+    .toast-notification {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* Landscape Orientation */
+@media (max-width: 991px) and (orientation: landscape) {
+    .hero-section {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+    
+    .product-card img {
+        height: 150px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .no-print,
+    nav,
+    footer,
+    .btn,
+    .cart-actions,
+    .payment-methods,
+    .sidebar,
+    .navbar,
+    .breadcrumb {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        padding: 0;
+        margin: 0;
+        color: black;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .card {
+        border: 1px solid #ddd;
+        box-shadow: none;
+    }
+    
+    .table {
+        border-collapse: collapse;
+    }
+    
+    .table th,
+    .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .product-card img {
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a2e;
+        color: #e5e5e5;
+    }
+    
+    .card,
+    .modal-content,
+    .dropdown-menu {
+        background-color: #16213e;
+        border-color: #0f3460;
+    }
+    
+    .card-header,
+    .modal-header {
+        background-color: #0f3460;
+        border-bottom-color: #1a1a2e;
+    }
+    
+    .form-control,
+    .input-group-text {
+        background-color: #0f3460;
+        border-color: #1a1a2e;
+        color: #e5e5e5;
+    }
+    
+    .table {
+        color: #e5e5e5;
+    }
+    
+    .table td,
+    .table th {
+        border-color: #0f3460;
+    }
+    
+    .text-muted {
+        color: #9ca3af !important;
+    }
+    
+    .alert-info {
+        background-color: #0f3460;
+        border-color: #1a1a2e;
+        color: #e5e5e5;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Focus Visible for Accessibility */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+    .btn:hover,
+    .card:hover {
+        transform: none;
+    }
+    
+    .hover-lift:hover {
+        transform: none;
+    }
+    
+    button {
+        min-height: 44px;
+    }
+    
+    a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+}

@@ -1,0 +1,118 @@
+[2026-04-06 22:31:07] [info] Application initialized in development mode
+[2026-04-06 22:31:07] [warning] Failed login attempt for email: dickensmugarura256@gmail.com - User not found
+[2026-04-06 22:31:07] [critical] Exception: Call to undefined function isLoggedIn() in C:\wamp64\www\easybuy\public\includes\header.php on line 22
+[2026-04-06 22:31:30] [info] Application initialized in development mode
+[2026-04-06 22:31:30] [critical] Exception: Call to undefined function isLoggedIn() in C:\wamp64\www\easybuy\public\includes\header.php on line 22
+[2026-04-06 22:31:47] [info] Application initialized in development mode
+[2026-04-06 22:31:47] [critical] Exception: Call to undefined function isLoggedIn() in C:\wamp64\www\easybuy\public\includes\header.php on line 22
+[2026-04-06 22:33:54] [info] Application initialized in development mode
+[2026-04-06 22:34:42] [info] Application initialized in development mode
+[2026-04-06 22:34:48] [info] Application initialized in development mode
+[2026-04-06 22:35:27] [info] Application initialized in development mode
+[2026-04-06 22:35:30] [error] Error [2] mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp64\www\easybuy\app\lib\Auth.php on line 636
+[2026-04-06 22:35:30] [info] New user registered: dickensmugarura256@gmail.com (ID: 2)
+[2026-04-06 22:35:32] [info] Application initialized in development mode
+[2026-04-06 22:35:38] [info] Application initialized in development mode
+[2026-04-06 22:35:48] [info] Application initialized in development mode
+[2026-04-06 22:36:07] [info] Application initialized in development mode
+[2026-04-06 22:36:16] [info] Application initialized in development mode
+[2026-04-06 22:36:56] [info] Application initialized in development mode
+[2026-04-06 22:37:35] [info] Application initialized in development mode
+[2026-04-06 22:38:14] [info] Application initialized in development mode
+[2026-04-06 22:38:17] [error] Error [2] mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp64\www\easybuy\app\lib\Auth.php on line 636
+[2026-04-06 22:38:17] [info] New user registered: dickensmugarura25@gmail.com (ID: 3)
+[2026-04-06 22:38:19] [info] Application initialized in development mode
+[2026-04-06 22:40:13] [info] Application initialized in development mode
+[2026-04-06 22:41:39] [info] Application initialized in development mode
+[2026-04-06 22:45:34] [info] Application initialized in development mode
+[2026-04-06 22:50:58] [info] Application initialized in development mode
+[2026-04-06 22:51:14] [info] Application initialized in development mode
+[2026-04-06 22:51:24] [info] Application initialized in development mode
+[2026-04-06 22:51:26] [error] Error [2] mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\wamp64\www\easybuy\public\forgot-password.php on line 51
+[2026-04-06 22:53:46] [info] Application initialized in development mode
+[2026-04-06 22:55:16] [info] Application initialized in development mode
+[2026-04-06 22:55:16] [error] Error [2] Undefined variable $loop in C:\wamp64\www\easybuy\public\index.php on line 49
+[2026-04-06 22:55:16] [error] Error [2] Attempt to read property "index" on null in C:\wamp64\www\easybuy\public\index.php on line 49
+[2026-04-06 22:55:16] [critical] Exception: Call to undefined function getCategoryIcon() in C:\wamp64\www\easybuy\public\index.php on line 53
+[2026-04-06 22:56:15] [info] Application initialized in development mode
+[2026-04-06 22:56:40] [info] Application initialized in development mode
+[2026-04-06 22:56:42] [info] Application initialized in development mode
+[2026-04-06 22:56:43] [info] Application initialized in development mode
+[2026-04-06 22:56:45] [info] Application initialized in development mode
+[2026-04-06 22:56:46] [info] Application initialized in development mode
+[2026-04-06 22:56:48] [info] Application initialized in development mode
+[2026-04-06 22:56:49] [info] Application initialized in development mode
+[2026-04-06 22:56:50] [info] Application initialized in development mode
+[2026-04-06 22:56:52] [info] Application initialized in development mode
+[2026-04-06 22:56:53] [info] Application initialized in development mode
+[2026-04-06 22:57:03] [info] Application initialized in development mode
+[2026-04-06 22:57:06] [info] Application initialized in development mode
+[2026-04-06 22:57:09] [info] Application initialized in development mode
+[2026-04-06 22:57:44] [info] Application initialized in development mode
+[2026-04-06 22:57:49] [info] Application initialized in development mode
+[2026-04-06 22:57:49] [error] Error [2] Undefined variable $loop in C:\wamp64\www\easybuy\public\index.php on line 49
+[2026-04-06 22:57:49] [error] Error [2] Attempt to read property "index" on null in C:\wamp64\www\easybuy\public\index.php on line 49
+[2026-04-06 22:57:49] [critical] Exception: Call to undefined function getCategoryIcon() in C:\wamp64\www\easybuy\public\index.php on line 53
+[2026-04-06 22:58:02] [info] Application initialized in development mode
+[2026-04-06 22:58:04] [info] Application initialized in development mode
+[2026-04-06 22:58:54] [info] Application initialized in development mode
+[2026-04-06 22:59:26] [info] Application initialized in development mode
+[2026-04-06 22:59:29] [info] Application initialized in development mode
+[2026-04-06 23:00:07] [info] Application initialized in development mode
+[2026-04-06 23:00:12] [info] Application initialized in development mode
+[2026-04-06 23:00:59] [info] Application initialized in development mode
+[2026-04-06 23:01:27] [info] Application initialized in development mode
+[2026-04-06 23:06:18] [info] Application initialized in development mode
+[2026-04-06 23:08:33] [info] Application initialized in development mode
+[2026-04-06 23:08:38] [info] Application initialized in development mode
+[2026-04-06 23:10:41] [info] Application initialized in development mode
+[2026-04-06 23:10:50] [info] Application initialized in development mode
+[2026-04-06 23:11:40] [info] Application initialized in development mode
+[2026-04-06 23:11:48] [info] Application initialized in development mode
+[2026-04-06 23:14:34] [info] Application initialized in development mode
+[2026-04-06 23:14:37] [info] Application initialized in development mode
+[2026-04-06 23:14:38] [info] Application initialized in development mode
+[2026-04-06 23:14:39] [info] Application initialized in development mode
+[2026-04-06 23:14:39] [info] Application initialized in development mode
+[2026-04-06 23:14:39] [info] Application initialized in development mode
+[2026-04-06 23:15:02] [info] Application initialized in development mode
+[2026-04-06 23:15:02] [info] Application initialized in development mode
+[2026-04-06 23:15:06] [info] Application initialized in development mode
+[2026-04-06 23:15:08] [info] Application initialized in development mode
+[2026-04-06 23:15:08] [error] Error [2] Undefined array key "vendor_name" in C:\wamp64\www\easybuy\vendor\includes\vendor-header.php on line 39
+[2026-04-06 23:17:33] [info] Application initialized in development mode
+[2026-04-06 23:17:34] [error] Error [2] Undefined array key "vendor_name" in C:\wamp64\www\easybuy\vendor\includes\vendor-header.php on line 39
+[2026-04-06 23:18:19] [info] Application initialized in development mode
+[2026-04-06 23:18:50] [info] Application initialized in development mode
+[2026-04-06 23:19:56] [info] Application initialized in development mode
+[2026-04-06 23:20:00] [info] Application initialized in development mode
+[2026-04-06 23:20:00] [error] Error [2] Undefined array key "vendor_name" in C:\wamp64\www\easybuy\vendor\includes\vendor-header.php on line 39
+[2026-04-06 23:20:09] [info] Application initialized in development mode
+[2026-04-06 23:20:11] [info] Application initialized in development mode
+[2026-04-06 23:20:11] [error] Error [2] Undefined array key "vendor_name" in C:\wamp64\www\easybuy\vendor\includes\vendor-header.php on line 39
+[2026-04-06 23:20:13] [info] Application initialized in development mode
+[2026-04-06 23:20:14] [info] Application initialized in development mode
+[2026-04-06 23:20:21] [info] Application initialized in development mode
+[2026-04-06 23:20:55] [info] Application initialized in development mode
+[2026-04-06 23:23:24] [info] Application initialized in development mode
+[2026-04-06 23:23:24] [error] Error [2] Undefined variable $loop in C:\wamp64\www\easybuy\public\index.php on line 49
+[2026-04-06 23:23:24] [error] Error [2] Attempt to read property "index" on null in C:\wamp64\www\easybuy\public\index.php on line 49
+[2026-04-06 23:23:24] [critical] Exception: Call to undefined function getCategoryIcon() in C:\wamp64\www\easybuy\public\index.php on line 53
+[2026-04-06 23:29:44] [info] Application initialized in development mode
+[2026-04-06 23:29:45] [critical] Exception: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'easybuy_db.testimonials' doesn't exist in C:\wamp64\www\easybuy\app\lib\Database.php on line 35
+[2026-04-06 23:43:33] [info] Application initialized in development mode
+[2026-04-06 23:43:33] [critical] Exception: Call to undefined function getCategoryIcon() in C:\wamp64\www\easybuy\public\index.php on line 144
+[2026-04-06 23:43:38] [info] Application initialized in development mode
+[2026-04-06 23:43:38] [critical] Exception: Call to undefined function getCategoryIcon() in C:\wamp64\www\easybuy\public\index.php on line 144
+[2026-04-06 23:44:15] [info] Application initialized in development mode
+[2026-04-06 23:44:15] [critical] Exception: Call to undefined function getCategoryIcon() in C:\wamp64\www\easybuy\public\index.php on line 144
+[2026-04-06 23:44:17] [info] Application initialized in development mode
+[2026-04-06 23:44:18] [critical] Exception: Call to undefined function getCategoryIcon() in C:\wamp64\www\easybuy\public\index.php on line 144
+[2026-04-06 23:44:18] [info] Application initialized in development mode
+[2026-04-06 23:44:18] [critical] Exception: Call to undefined function getCategoryIcon() in C:\wamp64\www\easybuy\public\index.php on line 144
+[2026-04-06 23:44:19] [info] Application initialized in development mode
+[2026-04-06 23:44:19] [critical] Exception: Call to undefined function getCategoryIcon() in C:\wamp64\www\easybuy\public\index.php on line 144
+[2026-04-06 23:44:19] [info] Application initialized in development mode
+[2026-04-06 23:44:19] [critical] Exception: Call to undefined function getCategoryIcon() in C:\wamp64\www\easybuy\public\index.php on line 144
+[2026-04-06 23:44:20] [info] Application initialized in development mode
+[2026-04-06 23:44:20] [critical] Exception: Call to undefined function getCategoryIcon() in C:\wamp64\www\easybuy\public\index.php on line 144

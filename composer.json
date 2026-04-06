@@ -1,0 +1,13 @@
+{
+    "name": "easybuy/uganda-ecommerce",
+    "description": "EasyBuy Uganda E-commerce Platform",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "EasyBuy\\": "app/"
+        }
+    }
+}
